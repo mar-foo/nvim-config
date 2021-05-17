@@ -1,0 +1,16 @@
+" Configuration
+source ~/.config/nvim/general/settings.vim
+source ~/.config/nvim/keys/mappings.vim
+
+"Plugins
+lua require('plugins')
+lua require('my-telescope')
+lua require('my-lsp.treesitter-config')
+lua require('my-lsp.lsp-config')
+lua require('my-lsp.clangd-lsp')
+lua require('my-lsp.compe-config')
+
+source ~/.config/nvim/plugin/dashboard.vim
+
+"Airline
+source ~/.config/nvim/themes/airline.vim
