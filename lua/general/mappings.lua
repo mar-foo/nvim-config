@@ -81,4 +81,4 @@ vim.api.nvim_set_keymap('n', 'N', 'Nzz', {})
 --------------------
 vim.api.nvim_set_keymap('n', '<Leader>fed', ':e $MYVIMRC<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>feR', ':luafile $MYVIMRC<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-p>', ':FZF<cr>', { silent = true })
+vim.api.nvim_set_keymap('n', '<C-s>', ':FZF<cr>', { silent = true })
