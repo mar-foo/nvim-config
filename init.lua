@@ -12,6 +12,7 @@ require('theme.airline')
 -- Lsp
 require('my-lsp.treesitter-config')
 require('my-lsp.lsp-config')
+require('my-lsp.bashls-lsp')
 require('my-lsp.clangd-lsp')
 require('my-lsp.sumneko-lsp')
 require('my-lsp.texlab-lsp')

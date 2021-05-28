@@ -36,7 +36,6 @@ vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-c>', '<esc>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-v>', ':vsplit<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>d', ':bd!<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-o>', ':only!<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>w', ':w<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader><space>', '/<++><cr>ca<', { noremap = true })
 
