@@ -16,6 +16,7 @@ require('my-lsp.bashls-lsp')
 require('my-lsp.clangd-lsp')
 require('my-lsp.sumneko-lsp')
 require('my-lsp.texlab-lsp')
+require('my-lsp.gopls-lsp')
 require('my-lsp.compe-config')
 
 -- Plugin configuration

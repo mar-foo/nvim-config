@@ -12,9 +12,9 @@ vim.api.nvim_set_option('splitbelow', true)                     -- Horizontal sp
 vim.api.nvim_set_option('splitright', true)                     -- Vertical splits will automatically be to the right
 vim.api.nvim_set_option('t_Co', '256')                          -- Support 256 colors
 vim.api.nvim_set_option('conceallevel', 0)                      -- So that I can see `` in markdown files
-vim.api.nvim_set_option('tabstop', 2)                           -- Insert 2 spaces for a tab
+-- vim.api.nvim_set_option('tabstop', 2)                           -- Insert 2 spaces for a tab
 vim.api.nvim_set_option('shiftwidth', 4)                        -- Change the number of space characters inserted for indentation
-vim.api.nvim_set_option('smarttab', true)                       -- Makes tabbing smarter will realize you have 2 vs 4
+-- vim.api.nvim_set_option('smarttab', true)                       -- Makes tabbing smarter will realize you have 2 vs 4
 vim.api.nvim_set_option('expandtab', true)                      -- Converts tabs to spaces
 vim.api.nvim_set_option('smartindent', true)                    -- Makes indenting smart
 vim.api.nvim_set_option('autoindent', true)                     -- Good auto indent
@@ -29,8 +29,9 @@ vim.api.nvim_set_option('showtabline', 2)                       -- Always show t
 vim.api.nvim_set_option('updatetime', 300)                      -- Faster completion
 vim.api.nvim_set_option('timeoutlen', 500)                      -- By default timeoutlen is 1000 ms
 vim.api.nvim_set_option('clipboard', 'unnamedplus')             -- Copy paste between vim and everything else
-vim.api.nvim_set_option('colorcolumn', '80')                    -- 80 character lines
+-- vim.api.nvim_set_option('colorcolumn', 80)                    -- 80 character lines
 vim.api.nvim_set_option('textwidth', 79)
+
 --set autochdir                                                 -- Your working directory will always be the same as your working directory
 --vim.api.nvim_set_option('iskeyword+', '-                     	-- treat dash separated words as a word text object--
 vim.api.nvim_exec('set formatoptions-=cro', true)              -- Stop newline continution of comments
@@ -43,6 +44,11 @@ vim.api.nvim_set_option('scrolloff', 8)
 vim.api.nvim_set_option('hlsearch', false)
 
 vim.cmd([[
+set colorcolumn=80
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+"set listchars='tab:\\|\ '
+"set list
+set smarttab
 "==========Autocommands==========
 autocmd InsertEnter * norm zz
 autocmd BufWritePre * %s/\s\+$//e " Remove trailing whitespace

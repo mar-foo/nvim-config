@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
         'lua-format',
         opt = true
         } -- Formatting for lua language server
+    -- use {'neoclide/coc.nvim', branch = 'release' }
+    use 'fatih/vim-go'
     -- Theme
     use {'dracula/vim', as = 'dracula', opt = true}
     use {
@@ -51,4 +53,6 @@ return require('packer').startup(function(use)
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
     use { 'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end }
     use 'junegunn/fzf.vim'
+    use 'jiangmiao/auto-pairs'
+    use 'tpope/vim-fugitive'
 end)
