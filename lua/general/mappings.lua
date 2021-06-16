@@ -89,3 +89,6 @@ vim.api.nvim_set_keymap('n', '<Leader>feR', ':luafile $MYVIMRC<cr>', { noremap =
 --------------------
 vim.api.nvim_set_keymap('n', '<Leader>f', ':FZF<cr>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>w', 'yiw:Rg <C-r>"<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>\'', ':Marks<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>g', ':GFiles<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>r', ':Rg<cr>', {noremap = true})
