@@ -9,3 +9,9 @@ prefer_single_line_comments = true,
 use_consistent_indentation = true,
 ignore_whitespace = true
 })
+
+require('kommentary.config').configure_language('go', {
+  prefer_single_line_comments = true,
+  use_consistent_indentation = true,
+  ignore_whitespace = true
+})

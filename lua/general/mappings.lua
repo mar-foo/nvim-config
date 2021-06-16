@@ -1,6 +1,6 @@
 -- Leader key
 vim.api.nvim_set_keymap('n', '<Space>', '<nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 
 vim.api.nvim_set_keymap('i', 'jk', '<esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'kj', '<esc>', { noremap = true, silent = true })
@@ -29,12 +29,16 @@ vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true })
 
 -- Window and buffer management
 --------------------
+vim.api.nvim_set_keymap('n', '<Leader>h', ':wincmd h<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>j', ':wincmd j<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>k', ':wincmd k<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>l', ':wincmd l<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-j>', ':wincmd j<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-k>', ':wincmd k<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-c>', '<esc>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-v>', ':vsplit<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>v', ':vsplit<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>d', ':bd!<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>w', ':w<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader><space>', '/<++><cr>ca<', { noremap = true })
@@ -80,4 +84,8 @@ vim.api.nvim_set_keymap('n', 'N', 'Nzz', {})
 --------------------
 vim.api.nvim_set_keymap('n', '<Leader>fed', ':e $MYVIMRC<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>feR', ':luafile $MYVIMRC<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-s>', ':FZF<cr>', { silent = true })
+
+-- FZF
+--------------------
+vim.api.nvim_set_keymap('n', '<Leader>f', ':FZF<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>w', 'yiw:Rg <C-r>"<cr>', {noremap = true})
