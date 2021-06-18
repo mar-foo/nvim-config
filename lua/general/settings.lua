@@ -30,8 +30,6 @@ vim.api.nvim_set_option('clipboard', 'unnamedplus')             -- Copy paste be
 -- vim.api.nvim_set_option('colorcolumn', 80)                    -- 80 character lines
 vim.api.nvim_set_option('textwidth', 79)
 
---set autochdir                                                 -- Your working directory will always be the same as your working directory
-vim.api.nvim_set_option('acd', true)
 --vim.api.nvim_set_option('iskeyword+', '-                     	-- treat dash separated words as a word text object--
 vim.api.nvim_exec('set formatoptions-=cro', true)              -- Stop newline continution of comments
 

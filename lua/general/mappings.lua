@@ -41,7 +41,7 @@ vim.api.nvim_set_keymap('n', '<C-c>', '<esc>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>v', ':vsplit<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>d', ':bd!<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>w', ':w<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader><space>', '/<++><cr>ca<', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader><Leader>', '/<++><cr>ca<', { noremap = true })
 
 -- Registers
 --------------------

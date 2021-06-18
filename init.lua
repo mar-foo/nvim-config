@@ -24,3 +24,4 @@ require('my-lsp.compe-config') -- Completion
 -- require('my-plugins.telescope') -- Telescope
 require('my-plugins.dashboard') -- Dashboard
 require('my-plugins.kommentary') -- Easy comments
+require('my-plugins.nvim-tree') -- Tree

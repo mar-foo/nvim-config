@@ -1,4 +1,4 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 vim.g.dashboard_default_executive ='telescope'
 
 -- Mappings

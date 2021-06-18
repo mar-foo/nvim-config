@@ -69,6 +69,7 @@ return require('packer').startup(function(use)
     config = { 'vim.cmd[[colorscheme gruvbox]]', 'vim.cmd[[highlight Normal ctermbg=none]]' }
   }
   use 'ap/vim-css-color'
+  use 'kyazdani42/nvim-tree.lua'
 
   -- Miscellaneous
     -- Telescope
