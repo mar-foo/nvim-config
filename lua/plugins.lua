@@ -49,10 +49,18 @@ return require('packer').startup(function(use)
 
   -- Theme
   use {'dracula/vim', as = 'dracula', opt = true}
-  use {
-    'vim-airline/vim-airline-themes',  event = 'VimEnter',
-    requires = {'vim-airline/vim-airline',  event = 'VimEnter'},
-    config = 'vim.cmd[[AirlineTheme gruvbox]]'
+  -- use {
+    -- 'vim-airline/vim-airline-themes',  event = 'VimEnter',
+    -- requires = {'vim-airline/vim-airline',  event = 'VimEnter'},
+    -- config = 'vim.cmd[[AirlineTheme gruvbox]]',
+    -- opt = true
+  -- }
+  use {'glepnir/galaxyline.nvim', branch = 'main',
+    requires = {'kyazdani42/nvim-web-devicons'},
+    opt = true
+  }
+  use {'hoob3rt/lualine.nvim',
+  requires = {'kyazdani42/nvim-web-devicons'}
   }
   use 'glepnir/dashboard-nvim'
   use {'dylanaraps/wal.vim', opt = true, config = 'vim.cmd[[colorscheme wal]]'} -- Pywal colorscheme

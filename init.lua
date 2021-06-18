@@ -7,7 +7,8 @@ require('general.netrw') -- Simple netrw configuration
 require('plugins') -- Use Packer.nvim to manage plugins
 
 -- Theme
-require('theme.airline') -- Airline
+-- require('theme.airline') -- Airline
+require('theme.evil-lualine') -- Lualine
 
 -- Lsp
 require('my-lsp.treesitter-config') -- Treesitter parsing

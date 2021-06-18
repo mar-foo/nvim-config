@@ -22,7 +22,7 @@ vim.api.nvim_set_option('laststatus', 2)                                        
 vim.api.nvim_exec('set number relativenumber', true)
 vim.api.nvim_set_option('cul', true)                            -- Enable highlighting of the current line
 vim.api.nvim_set_option('background', 'dark')                   -- tell vim what the background color looks like
-vim.api.nvim_set_option('showtabline', 2)                       -- Always show tabs
+-- vim.api.nvim_set_option('showtabline', 2)                       -- Always show tabs
 --set noshowmode                                                -- We don't need to see things like -- INSERT -- anymore
 vim.api.nvim_set_option('updatetime', 300)                      -- Faster completion
 vim.api.nvim_set_option('timeoutlen', 500)                      -- By default timeoutlen is 1000 ms
