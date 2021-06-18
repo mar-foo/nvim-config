@@ -1,4 +1,4 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 
 vim.api.nvim_set_option('syntax', 'enable')
 vim.api.nvim_set_option('hidden', true)
@@ -19,8 +19,6 @@ vim.api.nvim_set_option('expandtab', true)                      -- Converts tabs
 vim.api.nvim_set_option('smartindent', true)                    -- Makes indenting smart
 vim.api.nvim_set_option('autoindent', true)                     -- Good auto indent
 vim.api.nvim_set_option('laststatus', 2)                                           -- Always display the status line
---[[ vim.api.nvim_set_option('nu', true)
-vim.api.nvim_set_option('rnu', true) ]]
 vim.api.nvim_exec('set number relativenumber', true)
 vim.api.nvim_set_option('cul', true)                            -- Enable highlighting of the current line
 vim.api.nvim_set_option('background', 'dark')                   -- tell vim what the background color looks like
@@ -33,6 +31,7 @@ vim.api.nvim_set_option('clipboard', 'unnamedplus')             -- Copy paste be
 vim.api.nvim_set_option('textwidth', 79)
 
 --set autochdir                                                 -- Your working directory will always be the same as your working directory
+vim.api.nvim_set_option('acd', true)
 --vim.api.nvim_set_option('iskeyword+', '-                     	-- treat dash separated words as a word text object--
 vim.api.nvim_exec('set formatoptions-=cro', true)              -- Stop newline continution of comments
 
