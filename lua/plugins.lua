@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
     opt = true
   }
     -- Golang integration
-  use 'fatih/vim-go'
+  use {'fatih/vim-go', ft = 'go' }
 
   -- Editing
   use 'jiangmiao/auto-pairs'

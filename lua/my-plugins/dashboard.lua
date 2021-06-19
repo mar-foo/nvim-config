@@ -1,5 +1,4 @@
-vim.g.mapleader = ','
-vim.g.dashboard_default_executive ='telescope'
+vim.g.dashboard_default_executive ='fzf'
 
 -- Mappings
 vim.api.nvim_set_keymap('n', '<Leader>ss', '<c-u>SessionSave<cr>', { noremap = true })

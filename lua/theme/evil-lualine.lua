@@ -52,7 +52,6 @@ local config = {
     component_separators = "",
     section_separators = "",
     theme = {
-      gruvbox,
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
       -- are just setting default looks o statusline
@@ -91,19 +90,12 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
---[[ ins_left {
-function() return '▊' end,
-color = {fg = colors.blue}, -- Sets highlighting of component
-left_padding = 0 -- We don't need space before this
-}
-]]
-
 ins_left {
   function ()
     return vim.fn.mode()
   end,
   -- mode component
-  color = {fg = colors.red, gui = 'bold'},
+  color = {fg = colors.black, bg = colors.orange, gui = 'bold'},
   upper = true
 }
 
