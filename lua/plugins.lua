@@ -3,7 +3,7 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = '/home/mario/.config/nvim/pack/packer/start'
+local install_path = '/home/mario/.local/share/nvim/site/pack/packer/start/'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
