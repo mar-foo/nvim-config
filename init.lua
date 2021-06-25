@@ -1,13 +1,13 @@
 -- General configuration
 require('general.settings') -- Global settings I want everywhere
-require('general.mappings') -- Define keymappings
-require('general.netrw') -- Simple netrw configuration
+require('general.functions') -- Custom functions
+require('general.mappings') -- Keymappings
 
 -- Package management
 require('plugins') -- Use Packer.nvim to manage plugins
 
 -- Theme
--- require('theme.airline') -- Airline
+require('theme.theme') -- Color theme
 require('theme.evil-lualine') -- Lualine
 
 -- Lsp
@@ -21,7 +21,6 @@ require('my-lsp.gopls-lsp') -- Golang LSP
 require('my-lsp.compe-config') -- Completion
 
 -- Plugin configuration
--- require('my-plugins.telescope') -- Telescope
 require('my-plugins.dashboard') -- Dashboard
 require('my-plugins.kommentary') -- Easy comments
 require('my-plugins.nvim-tree') -- Tree
