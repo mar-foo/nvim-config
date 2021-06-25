@@ -3,7 +3,7 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = '/home/mario/.local/share/nvim/site/pack/packer/start/'
+local install_path = '/home/mario/.local/share/nvim/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -65,9 +65,10 @@ return require('packer').startup(function(use)
   use 'glepnir/dashboard-nvim'
   use {'dylanaraps/wal.vim', opt = true, config = 'vim.cmd[[colorscheme wal]]'} -- Pywal colorscheme
     -- Gruvbox
-  use { 'gruvbox-community/gruvbox',
-    config = { 'vim.cmd[[colorscheme gruvbox]]', 'vim.cmd[[highlight Normal ctermbg=none]]' }
-  }
+  -- use { 'gruvbox-community/gruvbox',
+    -- config = { 'vim.cmd[[colorscheme gruvbox]]', 'vim.cmd[[highlight Normal ctermbg=none]]' }
+  -- }
+  use 'morhetz/gruvbox'
   use 'ap/vim-css-color'
   use 'kyazdani42/nvim-tree.lua'
 

@@ -19,8 +19,11 @@ red = '#ec5f67'
 }
 ]]
 
+  -- Color scheme
+local colors
+if vim.api.nvim_get_option('background') == 'dark' then
 -- Gruvbox
-local colors = {
+colors = {
   bg           = '#1d2021',
   fg           = '#a89984',
   yellow       = '#fabd2f',
@@ -34,6 +37,24 @@ local colors = {
   blue         = '#83a598',
   gray         = '#a89984',
 }
+else
+-- Light Theme
+colors = {
+  bg           = '#fbf1c7',
+  fg           = '#3c3836',
+  yellow       = '#d79921',
+  cyan         = '#458588',
+  green        = '#98971a',
+  black        = '#282828',
+  white        = '#f9f5d7',
+  red          = '#cc241d',
+  orange       = '#d65d0e',
+  violet       = '#b16286',
+  blue         = '#076678',
+  gray         = '#928374',
+}
+end
+
 
 local conditions = {
   buffer_not_empty = function() return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 end,
@@ -123,7 +144,7 @@ ins_left {
 ins_left {
   'filename',
   condition = conditions.buffer_not_empty,
-  color = {fg = colors.yellow, gui = 'bold'}
+  color = {fg = colors.red, gui = 'bold'}
 }
 
 ins_left {'location'}
@@ -166,7 +187,7 @@ ins_left {
     return msg
   end,
   icon = ' LSP:',
-  color = {fg = colors.white, gui = 'bold'}
+  color = {fg = colors.fg, gui = 'bold'}
 }
 
 -- Add components to right sections

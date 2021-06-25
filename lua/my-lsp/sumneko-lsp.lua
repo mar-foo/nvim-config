@@ -12,7 +12,7 @@ if vim.fn.empty(vim.fn.glob(sumneko_root_path)) > 0 then
     local fn = vim.fn
     fn.system({'git', 'clone', 'https://github.com/sumneko/lua-language-server', sumneko_root_path})
     fn.system({'cd', sumneko_root_path})
-    fn.system({'git', 'submodule update', '--init', '--recursive'})
+    fn.system({'git', 'submodule', 'update', '--init', '--recursive'})
     fn.system({'cd', '3rd/luamake'})
     fn.system({'compile/install.sh'})
     fn.system({'cd', '../..'})
