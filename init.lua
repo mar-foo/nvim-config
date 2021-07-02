@@ -14,7 +14,6 @@ require('theme.evil-lualine') -- Lualine
 require('my-lsp.treesitter-config') -- Treesitter parsing
 require('my-lsp.lsp-config') -- Default LSP config
 require('my-lsp.bashls-lsp') -- Bash LSP
--- require('my-lsp.clangd-lsp') -- C/C++ LSP
 require('lspconfig').ccls.setup{} -- C/C++ LSP
 require('my-lsp.sumneko-lsp') -- Lua LSP
 require('my-lsp.texlab-lsp') -- Texlive/Latex LSP
@@ -22,6 +21,4 @@ require('my-lsp.gopls-lsp') -- Golang LSP
 require('my-lsp.compe-config') -- Completion
 
 -- Plugin configuration
-require('my-plugins.dashboard') -- Dashboard
 require('my-plugins.kommentary') -- Easy comments
-require('my-plugins.nvim-tree') -- Tree

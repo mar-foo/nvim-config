@@ -61,4 +61,6 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
     -- Training
   use 'ThePrimeagen/Vim-Be-Good'
+    -- Vim Wiki
+  use 'vimwiki/vimwiki'
 end)
