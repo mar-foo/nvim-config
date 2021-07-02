@@ -15,7 +15,6 @@ function _G.ThemeSwap()
     vim.api.nvim_set_option('background', 'light')
   else
     vim.api.nvim_set_option('background', 'dark')
-    -- vim.cmd('highlight Normal ctermbg=none')
   end
   vim.cmd('luafile $HOME/.config/nvim/lua/theme/evil-lualine.lua')
   vim.g.colors_name = 'gruvbox'
