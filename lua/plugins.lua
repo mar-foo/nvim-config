@@ -17,15 +17,12 @@ return require('packer').startup(function(use)
     -- LSP configuration
   use 'neovim/nvim-lspconfig'
     -- Code completion
-  use { 'hrsh7th/nvim-compe',
-    requires = { 'hrsh7th/vim-vsnip', 'rafamadriz/friendly-snippets',
-      'hrsh7th/vim-vsnip-integ' }
-  }
+  use { 'hrsh7th/nvim-compe'}
     -- Insert comments easily
   use 'b3nj5m1n/kommentary'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'p00f/nvim-ts-rainbow', requires = {'nvim-treesitter/nvim-treesitter'},
-  opt = true}
+  opt = true }
     -- Formatting for lua language server
   use_rocks {
     'lua-format',
@@ -33,6 +30,7 @@ return require('packer').startup(function(use)
   }
     -- Golang integration
   use {'fatih/vim-go', ft = 'go' }
+  use {'SirVer/ultisnips'}
 
   -- Editing
   use 'jiangmiao/auto-pairs'

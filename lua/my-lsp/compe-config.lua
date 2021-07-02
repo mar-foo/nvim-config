@@ -23,7 +23,7 @@ require'compe'.setup {
 		path = true;
 		buffer = true;
 		calc = false;
-		vsnip = true;
+    ultisnips = true;
 		nvim_lsp = true;
 		nvim_lua = true;
 		spell = false;
