@@ -98,4 +98,14 @@ autocmd FileType nroff imap <buffer> uu \[`u]
 autocmd BufNew,Filetype xmath :-1read ~/Documents/Personal/groff_template.ms
 autocmd FileType xmath :set filetype=nroff
   augroup END
+
+"==========Email==========
+augroup mail
+  autocmd BufEnter neomutt-* read /home/mario/.local/share/signature.txt
+  augroup END
+
+"==========Golang==========
+  augroup golang
+  autocmd BufNewFile,FileType go norm ggdG<cr> :-1read ~/.local/share/go-template.go<cr>
+  augroup END
 ]])

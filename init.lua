@@ -14,7 +14,8 @@ require('theme.evil-lualine') -- Lualine
 require('my-lsp.treesitter-config') -- Treesitter parsing
 require('my-lsp.lsp-config') -- Default LSP config
 require('my-lsp.bashls-lsp') -- Bash LSP
-require('my-lsp.clangd-lsp') -- C/C++ LSP
+-- require('my-lsp.clangd-lsp') -- C/C++ LSP
+require('lspconfig').ccls.setup{} -- C/C++ LSP
 require('my-lsp.sumneko-lsp') -- Lua LSP
 require('my-lsp.texlab-lsp') -- Texlive/Latex LSP
 require('my-lsp.gopls-lsp') -- Golang LSP
