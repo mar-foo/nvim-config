@@ -21,13 +21,8 @@ return require('packer').startup(function(use)
     -- Insert comments easily
   use 'b3nj5m1n/kommentary'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { 'p00f/nvim-ts-rainbow', requires = {'nvim-treesitter/nvim-treesitter'},
-  opt = true }
     -- Formatting for lua language server
-  use_rocks {
-    'lua-format',
-    opt = true
-  }
+  use_rocks { 'lua-format', opt = true, ft = 'lua' }
     -- Golang integration
   use {'fatih/vim-go', ft = 'go' }
   use {'SirVer/ultisnips'}
@@ -41,48 +36,19 @@ return require('packer').startup(function(use)
   end}
   use {'bkad/CamelCaseMotion', config = function()
   vim.g.camelcasemotion_key = ''
-  end}
+  end, ft = { 'go', 'c' }}
   use { 'machakann/vim-highlightedyank', config = function()
   vim.g.highlightedyank_highlight_duration = 100
   end}
 
   -- Theme
-  use {'dracula/vim', as = 'dracula', opt = true}
-  -- use {
-    -- 'vim-airline/vim-airline-themes',  event = 'VimEnter',
-    -- requires = {'vim-airline/vim-airline',  event = 'VimEnter'},
-    -- config = 'vim.cmd[[AirlineTheme gruvbox]]',
-    -- opt = true
-  -- }
-  use {'glepnir/galaxyline.nvim', branch = 'main',
-    requires = {'kyazdani42/nvim-web-devicons'},
-    opt = true
-  }
   use {'hoob3rt/lualine.nvim',
   requires = {'kyazdani42/nvim-web-devicons'}
   }
-  use 'glepnir/dashboard-nvim'
-  use {'dylanaraps/wal.vim', opt = true, config = 'vim.cmd[[colorscheme wal]]'} -- Pywal colorscheme
-    -- Gruvbox
-  -- use { 'gruvbox-community/gruvbox',
-    -- config = { 'vim.cmd[[colorscheme gruvbox]]', 'vim.cmd[[highlight Normal ctermbg=none]]' }
-  -- }
   use 'morhetz/gruvbox'
   use 'ap/vim-css-color'
-  use 'kyazdani42/nvim-tree.lua'
 
   -- Miscellaneous
-    -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons'},
-    cmd = { 'Telescope find_files', 'Telescope live_grep' },
-    config = function() require('my-plugins.telescope') end
-  }
-  use {
-    'nvim-telescope/telescope-fzy-native.nvim',
-    cmd = { 'Telescope find_files', 'Telescope live_grep' }
-  }
     -- Firenvim
   use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
     -- FZF
@@ -93,4 +59,6 @@ return require('packer').startup(function(use)
     -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
+    -- Training
+  use 'ThePrimeagen/Vim-Be-Good'
 end)
