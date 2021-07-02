@@ -98,7 +98,7 @@ map('n', '<Leader>T', ':ThemeSwap<cr>', { noremap = true })
 -- FZF
 --------------------
 map('n', '<Leader>f', ':FZF<cr>', {noremap = true})
-map('n', '<Leader>w', 'yiw:Rg <C-r>"<cr>', {noremap = true})
+-- map('n', '<Leader>w', 'yiw:Rg <C-r>"<cr>', {noremap = true})
 map('n', '<Leader>\'', ':Marks<cr>', {noremap = true})
 map('n', '<Leader>g', ':GFiles<cr>', {noremap = true})
-map('n', '<Leader>r', ':Rg<cr>', {noremap = true})
+map('n', '<Leader>w', ':Rg<cr>', {noremap = true})
