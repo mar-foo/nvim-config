@@ -106,6 +106,6 @@ augroup mail
 
 "==========Golang==========
   augroup golang
-  autocmd BufNewFile,FileType go norm ggdG<cr> :-1read ~/.local/share/go-template.go<cr>
+  autocmd FileType go nmap <buffer> <leader>? :GoDoc
   augroup END
 ]])
