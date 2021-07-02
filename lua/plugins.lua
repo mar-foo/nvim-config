@@ -24,7 +24,8 @@ return require('packer').startup(function(use)
     -- Insert comments easily
   use 'b3nj5m1n/kommentary'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { 'p00f/nvim-ts-rainbow', requires = {'nvim-treesitter/nvim-treesitter'}}
+  use { 'p00f/nvim-ts-rainbow', requires = {'nvim-treesitter/nvim-treesitter'},
+  opt = true}
     -- Formatting for lua language server
   use_rocks {
     'lua-format',
