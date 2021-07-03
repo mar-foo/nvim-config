@@ -16,7 +16,9 @@ map('n', '<Leader>j', ':wincmd j<cr>', { noremap = true })
 map('n', '<Leader>k', ':wincmd k<cr>', { noremap = true })
 map('n', '<Leader>l', ':wincmd l<cr>', { noremap = true })
 map('n', '<Leader>o', ':only<cr>',  { noremap = true })
-map('n', '<Leader>v', ':vsplit<cr>:FZF<cr>', { noremap = true })
+map('n', '<Leader>c', ':close<cr>',  { noremap = true })
+map('n', '<Leader>v', ':vsplit<cr>:FZF --inline-info<cr>', { noremap = true })
+map('n', '<Leader>s', ':split<cr>:FZF --inline-info<cr>', { noremap = true })
 map('n', '<Leader>d', ':bd!<cr>', { noremap = true })
 
 -- Placeholders
