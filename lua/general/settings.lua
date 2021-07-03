@@ -51,9 +51,8 @@ vim.g.netrw_winsize=30
 vim.cmd([[
 set colorcolumn=80
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-"set listchars='tab:\\|\ '
-"set list
 set smarttab
+
 "==========Autocommands==========
   augroup misc
 autocmd InsertEnter * norm zz

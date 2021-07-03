@@ -4,6 +4,10 @@ local map = vim.api.nvim_set_keymap
 map('i', 'jk', '<esc>', { noremap = true, silent = true })
 map('i', 'kj', '<esc>', { noremap = true, silent = true })
 
+-- Easy EX commands
+map('n', ';', ':', { noremap = true, silent = true })
+map('n', ':', ';', { noremap = true, silent = true })
+
 -- TAB in normal mode will move to next buffer
 map('n', '<TAB>', ':bnext<cr>', { noremap = true, silent = true })
 
