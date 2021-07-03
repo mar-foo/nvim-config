@@ -46,22 +46,23 @@ vim.cmd([[
 set colorcolumn=80
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set smarttab
+set path+=**
 
 "==========Autocommands==========
-  augroup misc
+augroup misc
 autocmd InsertEnter * norm zz
 autocmd BufWritePre * %s/\s\+$//e " Remove trailing whitespace
 autocmd FileType * setlocal formatoptions-=cro
-  augroup END
+augroup END
 
 "==========C++==========
-  augroup cpp
+augroup cpp
 autocmd BufWritePre *.cpp,*.h,*.html,*.css :normal gg=G<CR>
 autocmd BufWritePre *.cpp %s/}$/};/e
-  augroup END
+augroup END
 
 "==========Latex==========
-  augroup latex
+augroup latex
 autocmd FileType tex,plaintex nmap <silent><buffer> ,r :-1read ~/Documents/Personal/Latex/Templates/relazione.tex<CR>
 autocmd FileType tex,plaintex nmap <silent><buffer> ,a :-1read ~/Documents/Personal/Latex/Templates/template.tex<CR>
 autocmd FileType tex,plaintex imap <silent><buffer> ,e <ESC>:-1read ~/Documents/Personal/Latex/Templates/equation.tex<CR>
@@ -77,10 +78,10 @@ autocmd FileType tex,plaintex imap <buffer> oo \`{o}
 autocmd FileType tex,plaintex imap <buffer> ii \`{i}
 autocmd FileType tex,plaintex imap <buffer> uu \`{u}
 autocmd FileType tex,plaintex imap <buffer> EE \`{E}
-  augroup END
+augroup END
 
 "==========Groff=============
-  augroup groff
+augroup groff
 autocmd FileType nroff nmap <buffer><Leader>s :w<CR> :!groff -e -ms % -T pdf > %:r.pdf<CR>
 autocmd FileType nroff nmap <buffer><Leader>p :!zathura %:r.pdf & disown<CR>
 autocmd FileType nroff imap <buffer> ee \[`e]
@@ -90,11 +91,10 @@ autocmd FileType nroff imap <buffer> oo \[`o]
 autocmd FileType nroff imap <buffer> uu \[`u]
 autocmd BufNew,Filetype xmath :-1read ~/Documents/Personal/groff_template.ms
 autocmd FileType xmath :set filetype=nroff
-  augroup END
+augroup END
 
 "==========Email==========
 augroup mail
-  autocmd BufEnter neomutt-* read /home/mario/.local/share/signature.txt
-  augroup END
-
+autocmd BufEnter neomutt-* read /home/mario/.local/share/signature.txt
+augroup END
 ]])
