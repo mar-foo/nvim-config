@@ -10,6 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute 'packadd packer.nvim'
 end
 
+-- Plugins
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -25,6 +26,7 @@ return require('packer').startup(function(use)
   use_rocks { 'lua-format', opt = true, ft = 'lua' }
     -- Golang integration
   use {'fatih/vim-go', ft = 'go' }
+    -- Snippets
   use {'SirVer/ultisnips'}
 
   -- Editing
@@ -32,7 +34,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use { 'rhysd/clever-f.vim', config = function()
   vim.g.clever_f_smart_case = 1
-  vim.g.clever_f_chars_match_any_signs = ';'
   end}
   use {'bkad/CamelCaseMotion', config = function()
   vim.g.camelcasemotion_key = ''
@@ -42,9 +43,7 @@ return require('packer').startup(function(use)
   end}
 
   -- Theme
-  use {'hoob3rt/lualine.nvim',
-  requires = {'kyazdani42/nvim-web-devicons'}
-  }
+  use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
   use 'morhetz/gruvbox'
   use 'ap/vim-css-color'
 
@@ -52,15 +51,13 @@ return require('packer').startup(function(use)
     -- Firenvim
   use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
     -- FZF
-  use { 'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end,
-    config = function() vim.api.nvim_set_keymap('n', '<c-x>', ':FZF<cr>', {noremap = true })
-      vim.api.nvim_set_keymap('n', 'g/', ':Rg<cr>', {noremap = true}) end}
+  use { 'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end }
   use 'junegunn/fzf.vim'
     -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
     -- Training
-  use 'ThePrimeagen/Vim-Be-Good'
+  use { 'ThePrimeagen/Vim-Be-Good', cmd = 'VimBeGood' }
     -- Vim Wiki
   use 'vimwiki/vimwiki'
 end)
