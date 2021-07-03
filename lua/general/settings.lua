@@ -42,12 +42,6 @@ set('smartcase', true)
 set('scrolloff', 8)
 set('hlsearch', false)
 
--- Netrw
---------------------
-vim.g.netrw_banner=0
-vim.g.netrw_liststyle=3
-vim.g.netrw_winsize=30
-
 vim.cmd([[
 set colorcolumn=80
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -103,8 +97,4 @@ augroup mail
   autocmd BufEnter neomutt-* read /home/mario/.local/share/signature.txt
   augroup END
 
-"==========Golang==========
-  augroup golang
-  autocmd FileType go nmap <buffer> <leader>? :GoDoc
-  augroup END
 ]])

@@ -4,10 +4,6 @@ local map = vim.api.nvim_set_keymap
 map('i', 'jk', '<esc>', { noremap = true, silent = true })
 map('i', 'kj', '<esc>', { noremap = true, silent = true })
 
--- Easy EX commands
-map('n', ';', ':', { noremap = true, silent = true })
-map('n', ':', ';', { noremap = true, silent = true })
-
 -- TAB in normal mode will move to next buffer
 map('n', '<TAB>', ':bnext<cr>', { noremap = true, silent = true })
 
@@ -19,8 +15,12 @@ map('n', '<Leader>h', ':wincmd h<cr>', { noremap = true })
 map('n', '<Leader>j', ':wincmd j<cr>', { noremap = true })
 map('n', '<Leader>k', ':wincmd k<cr>', { noremap = true })
 map('n', '<Leader>l', ':wincmd l<cr>', { noremap = true })
+map('n', '<Leader>o', ':only<cr>',  { noremap = true })
 map('n', '<Leader>v', ':vsplit<cr>:FZF<cr>', { noremap = true })
 map('n', '<Leader>d', ':bd!<cr>', { noremap = true })
+
+-- Placeholders
+--------------------
 map('n', '<Leader><space>', '/<++><cr>ca<', { noremap = true })
 
 -- Terminal
@@ -63,9 +63,12 @@ map('n', 'N', 'Nzz', {})
 
 -- Useful remaps
 --------------------
-map('n', '<cr>', 'i<cr><esc>k', {})
 map('n', 'E', 'gE', {})
 map('n', 'L', 'g$', {})
+
+-- Browse man pages
+--------------------
+map('n', '<Leader>?', ':Man ', {})
 
 -- Shortcuts
 --------------------
@@ -80,9 +83,9 @@ map('n', '<Leader>T', ':ThemeSwap<cr>', { noremap = true })
 
 -- FZF
 --------------------
-map('n', '<Leader>f', ':FZF ~<cr>', {noremap = true})
-map('n', '<Leader><Leader>', ':FZF<cr>', {noremap = true})
+map('n', '<Leader>f', ':FZF --inline-info ~<cr>', { noremap = true })
+map('n', '<Leader><Leader>', ':FZF --inline-info<cr>', { noremap = true })
 -- map('n', '<Leader>w', 'yiw:Rg <C-r>"<cr>', {noremap = true})
-map('n', '<Leader>\'', ':Marks<cr>', {noremap = true})
-map('n', '<Leader>g', ':GFiles<cr>', {noremap = true})
-map('n', '<Leader>w', ':Rg<cr>', {noremap = true})
+map('n', '<Leader>\'', ':Marks<cr>', { noremap = true })
+map('n', '<Leader>g', ':GFiles<cr>', { noremap = true })
+map('n', '<Leader>w', ':Rg<cr>', { noremap = true })
