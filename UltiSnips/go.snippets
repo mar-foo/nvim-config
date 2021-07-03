@@ -1,0 +1,28 @@
+snippet bsc
+for ${1:scanner}.Scan() {
+	$2
+}
+$0
+endsnippet
+
+snippet func
+// $2($3) provides ${6:...}
+func $1 ${2:name}($3) $4 {
+	${5:body}
+}
+$0
+endsnippet
+
+snippet forr
+for i := range ${1:object} {
+	$2
+}
+$0
+endsnippet
+
+snippet fors
+for ${1:index}, ${2:rune} := range ${3:string} {
+	$4
+}
+$0
+endsnippet
