@@ -6,10 +6,23 @@ $0
 endsnippet
 
 snippet func
-// $2($3) provides ${6:...}
+// $2($3) ${6:...}
 func $1 ${2:name}($3) $4 {
 	${5:body}
 }
+$0
+endsnippet
+
+snippet errf
+if err != nil {
+	fmt.Fprintln(stderr, err)
+	os.Exit($1)
+}
+$0
+endsnippet
+
+snippet ff
+fmt.Printf("${1:format}")
 $0
 endsnippet
 

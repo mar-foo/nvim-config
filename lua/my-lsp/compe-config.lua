@@ -1,6 +1,3 @@
-
-
-
 vim.cmd [[set shortmess+=c]]
 vim.o.completeopt = "menuone,noinsert"
 
