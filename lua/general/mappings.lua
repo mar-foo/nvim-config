@@ -80,6 +80,7 @@ map('n', '<Leader>cr', ':luafile $MYVIMRC<cr>', { noremap = true })
 -- Custom Functions
 --------------------
 map('n', '<Leader>T', ':ThemeSwap<cr>', { noremap = true })
+map('n', '<Leader>w', ':call Grep()<cr>', { noremap = true })
 
 ---------- Plugins ----------
 
@@ -87,7 +88,4 @@ map('n', '<Leader>T', ':ThemeSwap<cr>', { noremap = true })
 --------------------
 map('n', '<Leader>f', ':FZF --inline-info ~<cr>', { noremap = true })
 map('n', '<Leader><Leader>', ':FZF --inline-info<cr>', { noremap = true })
--- map('n', '<Leader>w', 'yiw:Rg <C-r>"<cr>', {noremap = true})
-map('n', '<Leader>\'', ':Marks<cr>', { noremap = true })
-map('n', '<Leader>g', ':GFiles<cr>', { noremap = true })
-map('n', '<Leader>w', ':Rg<cr>', { noremap = true })
+map('n', '<Leader>r', ':Rg<cr>', { noremap = true })
