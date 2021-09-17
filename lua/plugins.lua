@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
     -- Golang integration
   use {'fatih/vim-go', ft = 'go' }
     -- Snippets
-  use {'SirVer/ultisnips'}
+  use {'SirVer/ultisnips', ft = { 'c', 'go' }}
 
   -- Editing
   use 'jiangmiao/auto-pairs'
