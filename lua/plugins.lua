@@ -35,12 +35,6 @@ return require('packer').startup(function(use)
   use { 'rhysd/clever-f.vim', config = function()
   vim.g.clever_f_smart_case = 1
   end}
-  use {'bkad/CamelCaseMotion', config = function()
-  vim.g.camelcasemotion_key = ''
-  end, ft = { 'go', 'c' }}
-  use { 'machakann/vim-highlightedyank', config = function()
-  vim.g.highlightedyank_highlight_duration = 100
-  end}
 
   -- Theme
   use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
@@ -48,16 +42,12 @@ return require('packer').startup(function(use)
   use 'ap/vim-css-color'
 
   -- Miscellaneous
-    -- Firenvim
-  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
     -- FZF
   use { 'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end }
   use 'junegunn/fzf.vim'
     -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
-    -- Training
-  use { 'ThePrimeagen/Vim-Be-Good', cmd = 'VimBeGood' }
     -- Vim Wiki
   use 'vimwiki/vimwiki'
 end)
