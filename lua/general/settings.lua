@@ -82,15 +82,21 @@ augroup END
 
 "==========Groff=============
 augroup groff
-autocmd FileType nroff nmap <buffer><Leader>s :w<CR> :!groff -e -ms % -T pdf > %:r.pdf<CR>
-autocmd FileType nroff nmap <buffer><Leader>p :!zathura %:r.pdf & disown<CR>
-autocmd FileType nroff imap <buffer> ee \[`e]
-autocmd FileType nroff imap <buffer> aa \[`a]
-autocmd FileType nroff imap <buffer> ii \[`i]
-autocmd FileType nroff imap <buffer> oo \[`o]
-autocmd FileType nroff imap <buffer> uu \[`u]
-autocmd BufNew,Filetype xmath :-1read ~/Documents/Personal/groff_template.ms
-autocmd FileType xmath :set filetype=nroff
+	autocmd FileType nroff nmap <buffer><Leader>s :w<CR> :!groff -e -ms % -T pdf > %:r.pdf<CR>
+	autocmd FileType nroff nmap <buffer><Leader>p :!zathura %:r.pdf & disown<CR>
+	autocmd FileType nroff imap <buffer> ee \[`e]
+	autocmd FileType nroff imap <buffer> aa \[`a]
+	autocmd FileType nroff imap <buffer> ii \[`i]
+	autocmd FileType nroff imap <buffer> oo \[`o]
+	autocmd FileType nroff imap <buffer> uu \[`u]
+	autocmd BufNew,Filetype xmath :-1read ~/doc/pers/groff_template.ms
+	autocmd FileType xmath :set filetype=nroff
+augroup END
+
+"==========C==========
+augroup C
+	autocmd FileType c :setlocal equalprg=cb
+	autocmd FileType c :setlocal cindent
 augroup END
 
 "==========Email==========
