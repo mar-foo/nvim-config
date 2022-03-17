@@ -1,23 +1,3 @@
---[[ local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  init_options = {
-    usePlaceholders = true,
-    completeUninmported = true
-  },
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  },
-}
-require'lspconfig'.gopls.setup{
-  on_attach = require'completion'.on_attach,
-  capabilities = capabilities,
-  cmd = { "gopls", '--remote=auto' },
-  filetypes = { "go", "gomod" },
-  root_dir = root_pattern("go.mod", ".git")
-} ]]
 vim.g.go_def_mode= 'gopls'
 vim.g.go_info_mode= 'gopls'
 require'lspconfig'.gopls.setup {
