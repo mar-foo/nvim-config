@@ -155,7 +155,7 @@ ins_left {
 -- for lualine it's any number greater then 2
 ins_left {function() return '%=' end}
 
-ins_left {
+--[[ ins_left {
   -- Lsp server name .
   function()
     local msg = 'No Active Lsp'
@@ -173,9 +173,10 @@ ins_left {
   icon = ' LSP:',
   color = {fg = colors.fg, gui = 'bold'}
 }
-
+ ]]
 -- Add components to right sections
-ins_right {
+
+--[[ ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
   symbols = {added = ' ', modified = '柳 ', removed = ' '},
@@ -184,7 +185,7 @@ ins_right {
   color_removed = colors.red,
   condition = conditions.hide_in_width
 }
-
+ ]]
 ins_right {
   'o:encoding', -- option component same as &encoding in viml
   upper = true, -- I'm not sure why it's upper case either ;)
