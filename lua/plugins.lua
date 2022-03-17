@@ -29,17 +29,12 @@ return require('packer').startup(function(use)
   use {'fatih/vim-go', ft = 'go'}
 
   -- Theme
-  use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
-  use 'morhetz/gruvbox'
-  use 'ap/vim-css-color'
+  use {'aditya-azad/candle-grey'}
 
-  -- Miscellaneous
-    -- FZF
-  use { 'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end }
+  -- FZF
+  use {'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end}
   use 'junegunn/fzf.vim'
-    -- Git
+	--
+  -- Git
   use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
-    -- Vim Wiki
-  use 'vimwiki/vimwiki'
 end)
