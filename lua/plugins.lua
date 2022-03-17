@@ -14,27 +14,19 @@ end
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  -- LSP
-    -- LSP configuration
-  use 'neovim/nvim-lspconfig'
-    -- Code completion
-  use { 'hrsh7th/nvim-compe'}
-    -- Insert comments easily
-  use 'b3nj5m1n/kommentary'
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    -- Formatting for lua language server
-  use_rocks { 'lua-format', opt = true, ft = 'lua' }
-    -- Golang integration
-  use {'fatih/vim-go', ft = 'go' }
-    -- Snippets
-  use {'SirVer/ultisnips', ft = { 'c', 'go' }}
 
-  -- Editing
-  use 'jiangmiao/auto-pairs'
-  use 'tpope/vim-surround'
-  use { 'rhysd/clever-f.vim', config = function()
-  vim.g.clever_f_smart_case = 1
-  end}
+  -- LSP configuration
+  use 'neovim/nvim-lspconfig'
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	--
+  -- Code completion
+  use {'hrsh7th/nvim-cmp'}
+  use {'hrsh7th/cmp-nvim-lsp'}
+
+  -- Insert comments easily
+  use 'b3nj5m1n/kommentary'
+  -- Golang integration
+  use {'fatih/vim-go', ft = 'go'}
 
   -- Theme
   use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
