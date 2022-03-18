@@ -53,6 +53,7 @@ require('lspconfig').sumneko_lua.setup {
 				enable = false,
 			}
 		}
-	}
+	},
+	on_attach = require('my-lsp.lsp-config'),
 }
 
