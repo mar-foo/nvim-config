@@ -20,8 +20,12 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	--
   -- Code completion
-  use {'hrsh7th/nvim-cmp'}
-  use {'hrsh7th/cmp-nvim-lsp'}
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'SirVer/UltiSnips'
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
+  use 'honza/vim-snippets'
 
   -- Insert comments easily
   use 'b3nj5m1n/kommentary'
@@ -29,7 +33,7 @@ return require('packer').startup(function(use)
   use {'fatih/vim-go', ft = 'go'}
 
   -- Theme
-  use {'aditya-azad/candle-grey'}
+  use 'aditya-azad/candle-grey'
 
   -- FZF
   use {'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end}
