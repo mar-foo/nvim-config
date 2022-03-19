@@ -1,5 +1,5 @@
 vim.cmd([[set shortmess+=c]])
-vim.o.completeopt = "menu,noselect,menuone"
+vim.o.completeopt = "menu,noinsert,noselect,menuone"
 
 local cmp = require('cmp')
 cmp.setup({
@@ -31,13 +31,3 @@ cmp.setup({
 		{name = 'path'},
 	}),
 })
-
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-require('lspconfig')['ccls'].setup {
-	capabilites = capabilities
-}
-
-require('lspconfig')['gopls'].setup {
-	capabilites = capabilities
-}

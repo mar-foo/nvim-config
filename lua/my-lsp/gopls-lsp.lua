@@ -1,6 +1,9 @@
 vim.g.go_def_mode= 'gopls'
 vim.g.go_info_mode= 'gopls'
-require'lspconfig'.gopls.setup {
+local capabilites = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+require('lspconfig')['gopls'].setup {
+	capabilites = capabilites,
 	cmd = {"gopls", "serve"},
 	settings = {
 		gopls = {
