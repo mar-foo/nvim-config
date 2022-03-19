@@ -13,7 +13,7 @@ require('theme.theme') -- Color theme
 -- Lsp
 require('my-lsp.treesitter-config') -- Treesitter parsing
 require('my-lsp.lsp-config') -- Default LSP config
-require('lspconfig').ccls.setup{} -- C/C++ LSP
+require('my-lsp.ccls-lsp') -- C/C++ LSP
 require('my-lsp.gopls-lsp') -- Golang LSP
 require('my-lsp.cmp-config')
 require('my-lsp.sumneko-lsp') -- Lua LSP
