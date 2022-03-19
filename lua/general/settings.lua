@@ -90,6 +90,7 @@ augroup END
 augroup C
 	autocmd FileType c :setlocal equalprg=cb
 	autocmd FileType c :setlocal cindent
+	autocmd FileType c :set equalprg='9 cb'
 augroup END
 
 "==========Email==========
