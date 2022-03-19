@@ -1,15 +1,7 @@
--- Theme
-function _G.ThemeSwap()
-  if vim.api.nvim_get_option('background') == 'dark' then
-    vim.api.nvim_set_option('background', 'light')
-  else
-    vim.api.nvim_set_option('background', 'dark')
-  end
-  vim.cmd('luafile $HOME/.config/nvim/lua/theme/evil-lualine.lua')
-  vim.g.colors_name = 'gruvbox'
+function GrQfx(query)
+	vim.cmd('cex system(\'grep -Rn '..query..' *\')')
 end
 
-
 -- Make functions executable in Ex mode
-vim.cmd('command! ThemeSwap lua ThemeSwap()')
 vim.cmd('command! -bang -nargs=* Grep call fzf#vim#grep("grep -n -R ".shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)')
+vim.cmd('command -nargs=* GrQfx lua GrQfx <q-args>')
