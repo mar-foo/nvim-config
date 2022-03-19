@@ -23,9 +23,7 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-nvim-lua'
-	use 'SirVer/UltiSnips'
-	use 'quangnguyen30192/cmp-nvim-ultisnips'
-	use 'honza/vim-snippets'
+	use {'saadparwaiz1/cmp_luasnip', requires = 'L3MON4D3/LuaSnip'}
 
 	-- Insert comments easily
 	use 'b3nj5m1n/kommentary'
