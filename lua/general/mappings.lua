@@ -80,5 +80,11 @@ map('n', '<Leader>cr', ':luafile $MYVIMRC<cr>', {noremap = true})
 -- FZF
 --------------------
 map('n', '<Leader>f', ':FZF --inline-info ~<cr>', {noremap = true})
-map('n', '<Leader><Leader>', ':FZF --inline-info<cr>', {noremap = true})
-map('n', '<Leader>g', ':Grep<cr>', {noremap = true})
+
+if os.execute('git status') == 0 then
+	map('n', '<Leader>g', ':GitGrep<cr>', {noremap = true})
+	map('n', '<Leader><Leader>', ':GitFiles<cr>', {noremap = true})
+else
+	map('n', '<Leader>g', ':Grep<cr>', {noremap = true})
+	map('n', '<Leader><Leader>', ':FZF --inline-info<cr>', {noremap = true})
+end
