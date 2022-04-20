@@ -90,7 +90,14 @@ augroup END
 augroup C
 	autocmd FileType c :setlocal equalprg=cb
 	autocmd FileType c :setlocal cindent
-	autocmd FileType c :set equalprg='9 cb'
+augroup END
+
+"==========Haskell==========
+augroup Haskell
+	autocmd FileType haskell :setlocal formatprg="hindent --indent-size=4"
+	autocmd FileType haskell :setlocal equalprg="hindent --indent-size=4"
+	autocmd FileType haskell :setlocal expandtab smarttab
+	autocmd FileType haskell :setlocal tabstop=4 shiftwidth=4
 augroup END
 
 "==========Email==========

@@ -15,6 +15,7 @@ require('my-lsp.treesitter-config') -- Treesitter parsing
 require('my-lsp.lsp-config') -- Default LSP config
 require('my-lsp.ccls-lsp') -- C/C++ LSP
 require('my-lsp.gopls-lsp') -- Golang LSP
+require('my-lsp.hls-config') -- Haskell LSP
 require('my-lsp.cmp-config')
 require('my-lsp.sumneko-lsp') -- Lua LSP
 
