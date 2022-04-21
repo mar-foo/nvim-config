@@ -34,6 +34,8 @@ return require('packer').startup(function(use)
 
 	-- Theme
 	use 'aditya-azad/candle-grey'
+	-- Org
+	use { 'nvim-orgmode/orgmode', config = function() require('orgmode').setup{} end }
 
 	-- FZF
 	use {'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end}

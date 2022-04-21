@@ -21,3 +21,4 @@ require('my-lsp.sumneko-lsp') -- Lua LSP
 
 -- Plugin configuration
 require('my-plugins.kommentary') -- Easy comments
+require('my-plugins.org') -- Org Mode

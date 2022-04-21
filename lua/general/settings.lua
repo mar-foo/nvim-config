@@ -39,6 +39,7 @@ set('hlsearch', false)
 
 vim.cmd([[
 set colorcolumn=80
+filetype plugin indent on
 set path+=**
 
 "==========Autocommands==========
@@ -103,5 +104,10 @@ augroup END
 "==========Email==========
 augroup mail
 	autocmd BufEnter neomutt-* :$read /home/mario/.local/share/signature.txt
+augroup END
+
+"==========Org==========
+augroup Org
+	autocmd  BufEnter *.org :set ft=org
 augroup END
 ]])
