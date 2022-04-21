@@ -34,6 +34,8 @@ return require('packer').startup(function(use)
 
 	-- Theme
 	use 'aditya-azad/candle-grey'
+	use 'romgrk/doom-one.vim'
+
 	-- Git
 	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
