@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
 	use {'fatih/vim-go', ft = 'go'}
 
 	-- Theme
+	use { 'NTBBloodbath/galaxyline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 	use 'aditya-azad/candle-grey'
 	use 'romgrk/doom-one.vim'
 

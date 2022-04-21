@@ -4,6 +4,23 @@ local gl = require("galaxyline")
 local section = gl.section
 gl.short_line_list = {"LuaTree", "packager", "Floaterm", "coc-explorer"}
 
+local doom_one_colors = {
+  bg = "#21242b",
+  fg = "#bbc2cf",
+  line_bg = "#21242b",
+  fg_green = "#98be65",
+  yellow = "#ecbe7b",
+  cyan = "#46d9ff",
+  darkblue = "#2257a0",
+  green = "#98be65",
+  orange = "#da8548",
+  purple = "#a9a1e1",
+  magenta = "#c678dd",
+  grey = "#3f444a",
+  blue = "#51afef",
+  red = "#ff6c6b"
+}
+
 local one_dark_colors = {
   bg = "#2e3440",
   fg = "#81a1c1",
@@ -40,6 +57,8 @@ local nord_colors = {
   red = "#BF616A"
 }
 
+local current_theme = doom_one_colors
+
 local buffer_not_empty = function()
   if fn.empty(fn.expand("%:t")) ~= 1 then
     return true
@@ -53,7 +72,7 @@ section.left[1] = {
     provider = function()
       return "  "
     end,
-    highlight = {nord_colors.blue, nord_colors.line_bg}
+    highlight = {current_theme.blue, current_theme.line_bg}
   }
 }
 section.left[2] = {
@@ -61,38 +80,39 @@ section.left[2] = {
     provider = function()
       -- auto change color according the vim mode
       local mode_color = {
-        n = nord_colors.magenta,
-        i = nord_colors.green,
-        v = nord_colors.blue,
-        [""] = nord_colors.blue,
-        V = nord_colors.blue,
-        c = nord_colors.red,
-        no = nord_colors.magenta,
-        s = nord_colors.orange,
-        S = nord_colors.orange,
-        [""] = nord_colors.orange,
-        ic = nord_colors.yellow,
-        R = nord_colors.purple,
-        Rv = nord_colors.purple,
-        cv = nord_colors.red,
-        ce = nord_colors.red,
-        r = nord_colors.cyan,
-        rm = nord_colors.cyan,
-        ["r?"] = nord_colors.cyan,
-        ["!"] = nord_colors.red,
-        t = nord_colors.red
+        n = current_theme.magenta,
+        i = current_theme.green,
+        v = current_theme.blue,
+        [""] = current_theme.blue,
+        V = current_theme.blue,
+        c = current_theme.red,
+        no = current_theme.magenta,
+        s = current_theme.orange,
+        S = current_theme.orange,
+        [""] = current_theme.orange,
+        ic = current_theme.yellow,
+        R = current_theme.purple,
+        Rv = current_theme.purple,
+        cv = current_theme.red,
+        ce = current_theme.red,
+        r = current_theme.cyan,
+        rm = current_theme.cyan,
+        ["r?"] = current_theme.cyan,
+        ["!"] = current_theme.red,
+        t = current_theme.red
       }
       cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])
-      return "     "
+      -- return "     "
+	return "   " .. fn.mode() .. " "
     end,
-    highlight = {nord_colors.red, nord_colors.line_bg, "bold"}
+    highlight = {current_theme.red, current_theme.line_bg, "bold"}
   }
 }
 section.left[3] = {
   FileIcon = {
     provider = "FileIcon",
     condition = buffer_not_empty,
-    highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, nord_colors.line_bg}
+    highlight = {require("galaxyline.providers.fileinfo").get_file_icon_color, current_theme.line_bg}
   }
 }
 section.left[4] = {
@@ -103,8 +123,8 @@ section.left[4] = {
     end,
     condition = buffer_not_empty,
     separator = " ",
-    separator_highlight = {nord_colors.purple, nord_colors.bg},
-    highlight = {nord_colors.purple, nord_colors.line_bg, "bold"}
+    separator_highlight = {current_theme.purple, current_theme.bg},
+    highlight = {current_theme.purple, current_theme.line_bg, "bold"}
   }
 }
 
@@ -113,17 +133,17 @@ section.right[1] = {
     provider = function()
       return " "
     end,
-    condition = require("galaxyline.provider_vcs").check_git_workspace,
-    highlight = {nord_colors.orange, nord_colors.line_bg}
+    condition = require("galaxyline.providers.vcs").check_git_workspace,
+    highlight = {current_theme.orange, current_theme.line_bg}
   }
 }
 section.right[2] = {
   GitBranch = {
     provider = "GitBranch",
-    condition = require("galaxyline.provider_vcs").check_git_workspace,
+    condition = require("galaxyline.providers.vcs").check_git_workspace,
     separator = " ",
-    separator_highlight = {nord_colors.purple, nord_colors.bg},
-    highlight = {nord_colors.orange, nord_colors.line_bg, "bold"}
+    separator_highlight = {current_theme.purple, current_theme.bg},
+    highlight = {current_theme.orange, current_theme.line_bg, "bold"}
   }
 }
 
@@ -140,7 +160,7 @@ section.right[3] = {
     provider = "DiffAdd",
     condition = checkwidth,
     icon = " ",
-    highlight = {nord_colors.green, nord_colors.line_bg}
+    highlight = {current_theme.green, current_theme.line_bg}
   }
 }
 section.right[4] = {
@@ -148,7 +168,7 @@ section.right[4] = {
     provider = "DiffModified",
     condition = checkwidth,
     icon = "柳",
-    highlight = {nord_colors.yellow, nord_colors.line_bg}
+    highlight = {current_theme.yellow, current_theme.line_bg}
   }
 }
 section.right[5] = {
@@ -156,16 +176,16 @@ section.right[5] = {
     provider = "DiffRemove",
     condition = checkwidth,
     icon = " ",
-    highlight = {nord_colors.red, nord_colors.line_bg}
+    highlight = {current_theme.red, current_theme.line_bg}
   }
 }
 
 section.right[6] = {
   LineInfo = {
     provider = "LineColumn",
-    separator = "",
-    separator_highlight = {nord_colors.blue, nord_colors.line_bg},
-    highlight = {nord_colors.gray, nord_colors.line_bg}
+    separator = " ",
+    separator_highlight = {current_theme.blue, current_theme.line_bg},
+    highlight = {current_theme.gray, current_theme.line_bg}
   }
 }
 -- section.right[7] = {
@@ -173,8 +193,8 @@ section.right[6] = {
 --     provider = "FileSize",
 --     separator = " ",
 --     condition = buffer_not_empty,
---     separator_highlight = {nord_colors.blue, nord_colors.line_bg},
---     highlight = {nord_colors.fg, nord_colors.line_bg}
+--     separator_highlight = {current_theme.blue, current_theme.line_bg},
+--     highlight = {current_theme.fg, current_theme.line_bg}
 --   }
 -- }
 
@@ -183,8 +203,8 @@ section.right[8] = {
     provider = "DiagnosticError",
     separator = " ",
     icon = " ",
-    highlight = {nord_colors.red, nord_colors.line_bg},
-    separator_highlight = {nord_colors.bg, nord_colors.bg}
+    highlight = {current_theme.red, current_theme.line_bg},
+    separator_highlight = {current_theme.bg, current_theme.bg}
   }
 }
 section.right[9] = {
@@ -192,8 +212,8 @@ section.right[9] = {
     provider = "DiagnosticWarn",
     -- separator = " ",
     icon = " ",
-    highlight = {nord_colors.yellow, nord_colors.line_bg},
-    separator_highlight = {nord_colors.bg, nord_colors.bg}
+    highlight = {current_theme.yellow, current_theme.line_bg},
+    separator_highlight = {current_theme.bg, current_theme.bg}
   }
 }
 
@@ -202,8 +222,8 @@ section.right[10] = {
     -- separator = " ",
     provider = "DiagnosticInfo",
     icon = " ",
-    highlight = {nord_colors.green, nord_colors.line_bg},
-    separator_highlight = {nord_colors.bg, nord_colors.bg}
+    highlight = {current_theme.green, current_theme.line_bg},
+    separator_highlight = {current_theme.bg, current_theme.bg}
   }
 }
 
@@ -212,8 +232,8 @@ section.right[11] = {
     provider = "DiagnosticHint",
     -- separator = " ",
     icon = " ",
-    highlight = {nord_colors.blue, nord_colors.line_bg},
-    separator_highlight = {nord_colors.bg, nord_colors.bg}
+    highlight = {current_theme.blue, current_theme.line_bg},
+    separator_highlight = {current_theme.bg, current_theme.bg}
   }
 }
 
@@ -221,15 +241,15 @@ section.short_line_left[1] = {
   BufferType = {
     provider = "FileIcon",
     separator = " ",
-    separator_highlight = {"NONE", nord_colors.lbg},
-    highlight = {nord_colors.blue, nord_colors.lbg, "bold"}
+    separator_highlight = {"NONE", current_theme.lbg},
+    highlight = {current_theme.blue, current_theme.lbg, "bold"}
   }
 }
 
 section.short_line_left[2] = {
   SFileName = {
     provider = function()
-      local fileinfo = require("galaxyline.provider_fileinfo")
+      local fileinfo = require("galaxyline.providers.fileinfo")
       local fname = fileinfo.get_current_file_name()
       for _, v in ipairs(gl.short_line_list) do
         if v == vim.bo.filetype then
@@ -239,13 +259,13 @@ section.short_line_left[2] = {
       return fname
     end,
     condition = buffer_not_empty,
-    highlight = {nord_colors.white, nord_colors.lbg, "bold"}
+    highlight = {current_theme.white, current_theme.lbg, "bold"}
   }
 }
 
 section.short_line_right[1] = {
   BufferIcon = {
     provider = "BufferIcon",
-    highlight = {nord_colors.fg, nord_colors.lbg}
+    highlight = {current_theme.fg, current_theme.lbg}
   }
 }
