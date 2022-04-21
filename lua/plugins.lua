@@ -34,6 +34,9 @@ return require('packer').startup(function(use)
 
 	-- Theme
 	use 'aditya-azad/candle-grey'
+	-- Git
+	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
 	-- Org
 	use { 'nvim-orgmode/orgmode', config = function() require('orgmode').setup{} end }
 

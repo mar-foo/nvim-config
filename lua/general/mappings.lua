@@ -88,3 +88,7 @@ else
 	map('n', '<Leader>g', ':Grep<cr>', {noremap = true})
 	map('n', '<Leader><Leader>', ':FZF --inline-info<cr>', {noremap = true})
 end
+
+-- Git
+--------------------
+map('n', '<Leader>.', ':Neogit<cr>', {noremap = true})
