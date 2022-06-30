@@ -38,9 +38,6 @@ return require('packer').startup(function(use)
 	-- Git
 	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
-	-- Org
-	use { 'nvim-orgmode/orgmode', config = function() require('orgmode').setup{} end }
-
 	-- FZF
 	use {'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end}
 	use 'junegunn/fzf.vim'

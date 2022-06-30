@@ -89,7 +89,6 @@ augroup END
 
 "==========C==========
 augroup C
-	autocmd FileType c :setlocal equalprg=cb
 	autocmd FileType c :setlocal cindent
 augroup END
 
@@ -104,10 +103,5 @@ augroup END
 "==========Email==========
 augroup mail
 	autocmd BufEnter neomutt-* :$read /home/mario/.local/share/signature.txt
-augroup END
-
-"==========Org==========
-augroup Org
-	autocmd  BufEnter *.org :set ft=org
 augroup END
 ]])
