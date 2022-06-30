@@ -23,4 +23,3 @@ require('my-lsp.sumneko-lsp') -- Lua LSP
 -- Plugin configuration
 require('my-plugins.kommentary') -- Easy comments
 require('my-plugins.neogit') -- Magit
-require('my-plugins.org') -- Org Mode
