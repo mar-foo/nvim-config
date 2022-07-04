@@ -17,8 +17,8 @@ map('n', '<Leader>k', ':wincmd k<cr>', {noremap = true})
 map('n', '<Leader>l', ':wincmd l<cr>', {noremap = true})
 map('n', '<Leader>1', ':only<cr>',  {noremap = true})
 map('n', '<Leader>c', ':close<cr>',  {noremap = true})
-map('n', '<Leader>v', ':vsplit<cr>:FZF --inline-info<cr>', {noremap = true})
-map('n', '<Leader>s', ':split<cr>:FZF --inline-info<cr>', {noremap = true})
+map('n', '<Leader>v', ':vsplit<cr><cr>', {noremap = true})
+map('n', '<Leader>s', ':split<cr><cr>', {noremap = true})
 map('n', '<C-s>', ':split<cr>', {noremap = true, silent = true})
 map('n', '<Leader>d', ':bd!<cr>', {noremap = true})
 
@@ -76,18 +76,6 @@ map('n', '<Leader>cc', ':e $MYVIMRC<cr>', {noremap = true})
 map('n', '<Leader>cr', ':luafile $MYVIMRC<cr>', {noremap = true})
 
 ---------- Plugins ----------
-
--- FZF
---------------------
-map('n', '<Leader>f', ':FZF --inline-info ~<cr>', {noremap = true})
-
-if os.execute('git status') == 0 then
-	map('n', '<Leader>g', ':GitGrep<cr>', {noremap = true})
-	map('n', '<Leader><Leader>', ':GitFiles<cr>', {noremap = true})
-else
-	map('n', '<Leader>g', ':Grep<cr>', {noremap = true})
-	map('n', '<Leader><Leader>', ':FZF --inline-info<cr>', {noremap = true})
-end
 
 -- Git
 --------------------
