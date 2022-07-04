@@ -19,3 +19,4 @@ require('my-lsp.lsp-config')
 -- Plugin configuration
 require('my-plugins.kommentary') -- Easy comments
 require('my-plugins.neogit') -- Magit
+require('my-plugins.telescope') -- Telescope

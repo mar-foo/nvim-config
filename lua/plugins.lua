@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
 	-- Git
 	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
-	-- FZF
-	use {'junegunn/fzf', run = function() vim.cmd[[fzf#install()]] end}
-	use 'junegunn/fzf.vim'
+	use { 'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim' }}}
+	use {'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 end)
