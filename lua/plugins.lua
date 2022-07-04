@@ -18,17 +18,24 @@ return require('packer').startup(function(use)
 	-- LSP configuration
 	use 'neovim/nvim-lspconfig'
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-	--
 	use 'nvim-treesitter/nvim-treesitter-textobjects'
 	use {'sakhnik/nvim-gdb', run = './install.sh'}
+
 	-- Code completion
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-nvim-lua'
 	use {'saadparwaiz1/cmp_luasnip', requires = 'L3MON4D3/LuaSnip'}
 
+	-- Auto pairs
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
+
 	-- Insert comments easily
 	use 'b3nj5m1n/kommentary'
+
 	-- Golang integration
 	use {'fatih/vim-go', ft = 'go'}
 
