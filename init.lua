@@ -12,13 +12,9 @@ require('theme.theme') -- Color theme
 
 -- Lsp
 require('my-lsp.treesitter-config') -- Treesitter parsing
-require('my-lsp.lsp-config') -- Default LSP config
-require('my-lsp.ccls-lsp') -- C/C++ LSP
-require('my-lsp.gopls-lsp') -- Golang LSP
-require('my-lsp.hls-config') -- Haskell LSP
 require('my-lsp.cmp-config')
 require('my-plugins.luasnip')
-require('my-lsp.sumneko-lsp') -- Lua LSP
+require('my-lsp.lsp-config')
 
 -- Plugin configuration
 require('my-plugins.kommentary') -- Easy comments

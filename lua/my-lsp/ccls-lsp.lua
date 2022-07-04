@@ -2,5 +2,5 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 require('lspconfig')['ccls'].setup {
 	capabilities = capabilities,
-	on_attach = require('my-lsp.lsp-config'),
+	on_attach = require('my-lsp.lsp-config')
 }

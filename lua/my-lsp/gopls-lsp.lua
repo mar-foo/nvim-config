@@ -2,20 +2,6 @@ vim.g.go_def_mode= 'gopls'
 vim.g.go_info_mode= 'gopls'
 local capabilites = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require('lspconfig')['gopls'].setup {
-	capabilites = capabilites,
-	cmd = {"gopls", "serve"},
-	settings = {
-		gopls = {
-			analyses = {
-				unusedparams = true,
-			},
-			staticcheck = true,
-		},
-	},
-	on_attach = require('my-lsp.lsp-config'),
-}
-
 function GoImports(timeout_ms)
 	local context = { source = { organizeImports = true } }
 	vim.validate { context = { context, "t", true } }
