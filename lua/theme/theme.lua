@@ -1,9 +1,13 @@
-vim.api.nvim_set_option('termguicolors', true)
-vim.api.nvim_set_option('background', 'dark')
+if Read_file(os.getenv('HOME') .. '/.cache/themechange/current') == 'dark\n' then
+	vim.o.background = 'dark'
+else
+	vim.o.background = 'light'
+end
 
-vim.cmd('colorscheme doom-one')
--- vim.cmd('hi ColorColumn ctermbg=8') -- Bright grey
+vim.o.termguicolors = true
+
+vim.cmd('colorscheme gruvbox')
 vim.cmd('hi Normal guibg=none')
 vim.cmd('hi EndOfBuffer guibg=none')
 
-require('theme.voitd')
+require('theme.nerd')

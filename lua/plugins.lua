@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
 	use { 'NTBBloodbath/galaxyline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 	use 'aditya-azad/candle-grey'
 	use 'romgrk/doom-one.vim'
+	use 'ellisonleao/gruvbox.nvim'
 
 	-- Git
 	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
