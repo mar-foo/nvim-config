@@ -1,5 +1,6 @@
 local ls = require('luasnip')
 local s = ls.s
+local t = ls.text_node
 local fmt = require('luasnip.extras.fmt').fmt
 local i = ls.insert_node
 local rep = require('luasnip.extras').rep
@@ -28,15 +29,18 @@ vim.keymap.set({'i', 's'}, '<C-l>', function()
 	end
 end, {noremap = true, silent = true})
 
-ls.snippets = {
-	lua = {
-		s("req", fmt("local {} = require('{}')", {i(1), rep(1)})),
-	},
-	c = {
-		s("if", fmt([[
-if(int {} = 0; {} < {}; {}++){{
+ls.add_snippets("lua", {
+	s("req", {
+		t("local "), i(1, "req"), t(" = require('"), rep(1), t("')")
+	})
+})
+ls.add_snippets("c", {
+	s("test", fmt([[
+START_TEST({})
+{{
 	{}
-}}]],
-		{i(1, 'i'), rep(1), i(2), rep(1), i(0)})),
-	},
-}
+}}
+END_TEST]],
+		{i(1, 'i'), i(0)})),
+})
+

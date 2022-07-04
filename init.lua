@@ -13,8 +13,8 @@ require('theme.theme') -- Color theme
 -- Lsp
 require('my-lsp.treesitter-config') -- Treesitter parsing
 require('my-lsp.cmp-config')
-require('my-plugins.luasnip')
 require('my-lsp.lsp-config')
+require('my-plugins.luasnip-config')
 
 -- Plugin configuration
 require('my-plugins.kommentary') -- Easy comments
