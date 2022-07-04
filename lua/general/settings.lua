@@ -1,44 +1,42 @@
 vim.g.mapleader = ','
 
-local set = vim.api.nvim_set_option
-
-set('autoindent', true)                     -- Good auto indent
-set('background', 'dark')                   -- tell vim what the background color looks like
-set('clipboard', 'unnamedplus')             -- Copy paste between vim and everything else
-set('conceallevel', 0)                      -- So that I can see `` in markdown files
-set('cul', true)                            -- Enable highlighting of the current line
-set('cursorline', false)
-set('encoding', 'utf-8')                    -- The encoding displayed
-set('fileencoding', 'utf-8')                -- The encoding written to file
-set('hidden', true)
-set('laststatus', 2)                        -- Always display the status line
-set('mouse', 'a')                           -- Enable your mouse
-set('pumheight', 10)                        -- Makes popup menu smaller
-set('ruler', true)                          -- Show the cursor position all the time
-set('shiftwidth', 8)                        -- Change the number of space characters inserted for indentation
-set('smartindent', true)                    -- Makes indenting smart
-set('softtabstop', 8)
-set('splitbelow', true)                     -- Horizontal splits will automatically be below
-set('splitright', true)                     -- Vertical splits will automatically be to the right
-set('syntax', 'enable')
-set('t_Co', '256')                          -- Support 256 colors
-set('tabstop', 8)
-set('textwidth', 79)
-set('timeoutlen', 500)                      -- By default timeoutlen is 1000 ms
-set('updatetime', 300)                      -- Faster completion
-set('wrap', false)                          -- Display long lines as just one line
+vim.o.autoindent = true                     -- Good auto indent
+vim.o.background = 'dark'                   -- tell vim what the background color looks like
+vim.o.clipboard = 'unnamedplus'             -- Copy paste between vim and everything else
+vim.o.colorcolumn = 80
+vim.o.conceallevel = 0                      -- So that I can see `` in markdown files
+vim.o.cul = true                            -- Enable highlighting of the current line
+vim.o.cursorline = false
+vim.o.encoding = 'utf-8'                    -- The encoding displayed
+vim.o.fileencoding = 'utf-8'                -- The encoding written to file
+vim.o.hidden = true
+vim.o.laststatus = 2                        -- Always display the status line
+vim.o.mouse = 'a'                           -- Enable your mouse
+vim.o.pumheight = 10                        -- Makes popup menu smaller
+vim.o.ruler = true                          -- Show the cursor position all the time
+vim.o.shiftwidth = 8                        -- Change the number of space characters inserted for indentation
+vim.o.smartindent = true                    -- Makes indenting smart
+vim.o.softtabstop = 8
+vim.o.splitbelow = true                     -- Horizontal splits will automatically be below
+vim.o.splitright = true                     -- Vertical splits will automatically be to the right
+vim.o.syntax = 'enable'
+vim.o.t_Co = '256'                          -- Support 256 colors
+vim.o.tabstop = 8
+vim.o.textwidth = 79
+vim.o.timeoutlen = 500                      -- By default timeoutlen is 1000 ms
+vim.o.updatetime = 300                      -- Faster completion
+vim.o.wrap = false                          -- Display long lines as just one line
 
 vim.api.nvim_exec('set formatoptions-=cro', true)              -- Stop newline continution of comments
 
 -- My configuration
 --------------------
-set('ignorecase', true)
-set('smartcase', true)
-set('scrolloff', 8)
-set('hlsearch', false)
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.scrolloff = 8
+vim.o.hlsearch = false
 
 vim.cmd([[
-set colorcolumn=80
 filetype plugin indent on
 set path+=**
 
